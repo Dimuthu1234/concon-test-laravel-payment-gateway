@@ -42,5 +42,6 @@ Route::group(['namespace' => 'Web\User', 'middleware' => 'auth'], function () {
     Route::resource('/history', 'HistoryController', resourceNames('history'));
     Route::resource('/payment', 'PaymentController', resourceNames('payment'));
     Route::resource('/product', 'ProductController', resourceNames('product'));
+    Route::resource('/checkout', 'CheckoutController', resourceNames('checkout'));
 
 });

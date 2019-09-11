@@ -90,12 +90,12 @@
                     </a>
                     <a class="dropdown-item" href="{{ route('home') }}">
                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Home Page
+                        Products
                     </a>
                 @else
                     <a class="dropdown-item" href="{{ route('home') }}">
                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Home Page
+                        Products
                     </a>
                 @endif
                 <div class="dropdown-divider"></div>

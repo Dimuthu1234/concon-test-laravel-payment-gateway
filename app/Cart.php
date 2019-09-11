@@ -5,7 +5,7 @@ namespace App;
 
 class Cart
 {
-    public $items;
+    public $items = null;
     public $totalQty = 0;
     public $totalPrice = 0;
 
@@ -29,6 +29,6 @@ class Cart
         $storedItem['price'] = $item->price * $storedItem['qty'];
         $this->items[$id] = $storedItem;
         $this->totalQty++;
-        $this->totalPrice = $item->price ;
+        $this->totalPrice = $item->price;
     }
 }
