@@ -16,6 +16,22 @@
     <!-- main css -->
     <link href="{{ url('css/app.css') }}" rel="stylesheet">
 
+    <style>
+        footer {
+            position: fixed;
+            height: 50px;
+            background-color: red;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin-bottom: 0px;
+        }
+
+        body {
+            margin-bottom:50px;
+        }
+    </style>
+
     @stack('styles')
 
 </head>
@@ -26,7 +42,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-@include('adminShared.sideNav')
+{{--@include('adminShared.sideNav')--}}
 <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -41,12 +57,6 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">@yield('title')</h1>
-                    <a href="@yield('actionUrl')" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="@yield('actionIcon') fa-sm text-white-50"></i> @yield('actionBtn')</a>
-                </div>
-
                 @yield('content')
 
             </div>

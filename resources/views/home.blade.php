@@ -1,23 +1,20 @@
-@extends('layouts.app')
-
+@extends('layouts.main')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
+    @foreach($products as $product)
+        <div class="row cartcontent">
+            <div class="col-sm-3 col-md-6 col-lg-4">
+                <img src="{{url('images/'.$product->image)}}">
+            </div>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+                <h2>{{ $product->title }}</h2>
+                <h3>{{ env('CURRENCY', '$').$product->price }}</h3>
+                <p>{{ $product->description }}</p>
+                <a class="btn btn-primary addcart" href="{{ route('product.addToCart', ['id' => $product->id]) }}"><i class="fa fa-plus"></i>&nbsp; Add to Cart</a>
             </div>
         </div>
-    </div>
-</div>
+    @endforeach
 @endsection
+
+
+
+

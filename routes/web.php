@@ -12,12 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
-
-//Route::get('/dashboard', function () {
-//    return view('admin.dashboard');
-//})->name('admin.dashboard');
 
 Auth::routes();
 
@@ -39,8 +35,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Web\Admin', 'middleware' => '
 
 Route::group(['namespace' => 'Web\User', 'middleware' => 'auth'], function () {
 
+    Route::get('/add-to-cart/{id}', 'ProductController@getAddToCart')->name('product.addToCart');
+
     Route::resource('/user', 'UserController', resourceNames('user'));
+    Route::resource('/cart', 'CartController', resourceNames('cart'));
     Route::resource('/history', 'HistoryController', resourceNames('history'));
     Route::resource('/payment', 'PaymentController', resourceNames('payment'));
+    Route::resource('/product', 'ProductController', resourceNames('product'));
 
 });
