@@ -29,6 +29,11 @@ class Cart
         $storedItem['price'] = $item->price * $storedItem['qty'];
         $this->items[$id] = $storedItem;
         $this->totalQty++;
-        $this->totalPrice = $item->price;
+
+        $totPriceArray = [];
+        for ($z = 1; $z <= sizeof($this->items); $z++){
+            $totPriceArray[] = $this->items[$z]['price'];
+        }
+        $this->totalPrice = array_sum($totPriceArray);
     }
 }

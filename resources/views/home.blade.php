@@ -1,5 +1,12 @@
 @extends('layouts.main')
 @section('content')
+    @if(Session::has('success'))
+    <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+        <div id="charge-message" class="alert alert-success">
+            {{ Session::get('success') }}
+        </div>
+    </div>
+    @endif
     @foreach($products as $product)
         <div class="row cartcontent">
             <div class="col-sm-3 col-md-6 col-lg-4">

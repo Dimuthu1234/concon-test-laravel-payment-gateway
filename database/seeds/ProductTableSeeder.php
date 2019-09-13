@@ -35,7 +35,7 @@ Good Descriptive Writing
 Good descriptive writing creates an impression in the reader\'s mind of an event, a place, a person, or a thing. The writing will be such that it will set a mood or describe something in such detail that if the reader saw it, they would recognize it.
 
 To be good, descriptive writing has to be concrete, evocative and plausible.',
-            'price' => 375
+            'price' => 350
         ]);
 
         $product->save();

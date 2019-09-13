@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class History extends Model
+class Order extends Model
 {
     protected $fillable = ['user_id', 'cart', 'address', 'name', 'payment_id'];
 

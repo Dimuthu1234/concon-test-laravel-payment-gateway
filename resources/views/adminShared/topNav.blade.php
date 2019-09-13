@@ -45,12 +45,12 @@
         </li>
         @if(!(Auth::user()->is_admin))
             <li class="nav-item dropdown no-arrow mx-1">
-                <a class="nav-link headerlink" href="{{route('admin.dashboard')}}">
+                <a class="nav-link headerlink" href="{{route('history.index')}}">
                     My Receipts
                 </a>
             </li>
             <li class="nav-item dropdown no-arrow mx-1">
-                <a class="nav-link headerlink" href="{{route('admin.dashboard')}}">
+                <a class="nav-link headerlink" href="{{route('history.index')}}">
                     History
                 </a>
             </li>
