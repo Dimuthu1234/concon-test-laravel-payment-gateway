@@ -45,7 +45,11 @@
             <div class="col-lg-8">
                 <div class="p-5">
                     <div class="text-center">
-                        <a href="{{ route('checkout.index') }}" type="button" class="btn btn-success btn-user btn-block" >Checkout</a>
+                        <a href="{{ route('checkout.index') }}" class="btn btn-success btn-user btn-block" style="border-radius: 40px; padding: 10px">
+                            <button type="submit" style="background: #00800000;border: none;outline: none; color: #fff" >
+                                Buy now
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

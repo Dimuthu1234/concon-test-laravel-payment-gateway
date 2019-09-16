@@ -11,17 +11,18 @@ class Cart
 
     public function __construct($oldCart)
     {
-        if ($oldCart){
+        if ($oldCart) {
             $this->items = $oldCart->items;
             $this->totalQty = $oldCart->totalQty;
             $this->totalPrice = $oldCart->totalPrice;
         }
     }
 
-    public function add($item, $id){
+    public function add($item, $id)
+    {
         $storedItem = ['qty' => 0, 'price' => $item->price, 'item' => $item];
-        if ($this->items){
-            if (array_key_exists($id, $this->items)){
+        if ($this->items) {
+            if (array_key_exists($id, $this->items)) {
                 $storedItem = $this->items[$id];
             }
         }
@@ -31,8 +32,9 @@ class Cart
         $this->totalQty++;
 
         $totPriceArray = [];
-        for ($z = 1; $z <= sizeof($this->items); $z++){
-            $totPriceArray[] = $this->items[$z]['price'];
+
+        foreach ($this->items as $key => $value){
+            $totPriceArray[] = $this->items[$key]['price'];
         }
         $this->totalPrice = array_sum($totPriceArray);
     }
